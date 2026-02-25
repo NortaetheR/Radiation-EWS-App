@@ -1,29 +1,30 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
+import 'react-native-gesture-handler';
 import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
-
+import { PaperProvider } from 'react-native-paper';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
+
+import React from 'react';
 export default function RootLayout() {
   const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
-  });
-
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+    <PaperProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        {/* Layar Utama: Peta */}
+        <Stack.Screen name="index" />
+        
+        {/* Layar Detail Alat (Akan kita buat setelah ini) */}
+        <Stack.Screen 
+          name="device/[id]" 
+          options={{ 
+            headerShown: true, 
+            title: 'Detail Perangkat',
+            headerBackTitle: 'Peta' 
+          }} 
+        />
         <Stack.Screen name="+not-found" />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </PaperProvider>
   );
 }

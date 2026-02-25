@@ -5,6 +5,7 @@ node_modules/
 
 # Expo
 .expo/
+.expo-shared/
 dist/
 web-build/
 expo-env.d.ts
@@ -30,10 +31,59 @@ yarn-error.*
 .DS_Store
 *.pem
 
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
 # local env files
 .env*.local
 
 # typescript
 *.tsbuildinfo
 
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Android build outputs (to save space on built apps)
+android/app/build/
+android/build/
+android/gradle/
+android/app/src/debug/
+android/app/src/debugOptimized/
+android/app/src/main/assets/
+android/app/src/main/res/
+android/app/intermediates/
+android/app/outputs/
+android/app/tmp/
+android/intermediates/
+android/outputs/
+android/tmp/
+android/
+
+# iOS (if applicable)
+ios/build/
+ios/Pods/
+
+# Logs
+logs/
+*.log
+
+# Cache
+.cache/
+.tmp/
+
+# Package manager
+.yarn/cache/
+.yarn/install-state.gz
+
+# Temporary files
+*.tmp
+*.temp
+
 app-example
+

@@ -2,7 +2,7 @@
   "expo": {
     "name": "BRIN Radiation Map",
     "slug": "radiation-ews-app",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "radiationewsapp",
@@ -12,6 +12,12 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.brin.radiationewsapp",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "FOREGROUND_SERVICE"
+      ],
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
@@ -25,6 +31,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-font",
       [
         "expo-splash-screen",
         {
@@ -32,6 +39,15 @@
           "imageWidth": 200,
           "resizeMode": "contain",
           "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "@maplibre/maplibre-react-native",
+        {
+          "android": {
+            "nativeVersion": "11.12.1",
+            "nativeVariant": "opengl"
+          }
         }
       ]
     ],

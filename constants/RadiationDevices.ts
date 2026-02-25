@@ -1,21 +1,11 @@
-export interface RadiationDevice {
-  id: string;
+export interface DeviceData {
+  device_mac: string;
   latitude: number;
   longitude: number;
-  radiation: number; // CPM
+  ews_level: number;
+  msv: number;
+  cpm: number;
+  battery_percent: number;
+  timestamp?: string;
+  time?: string;
 }
-
-export const dummyDevices: RadiationDevice[] = [
-  {
-    id: 'gm01',
-    latitude: -6.2005,
-    longitude: 106.8169,
-    radiation: 120,
-  },
-  {
-    id: 'gm02',
-    latitude: -6.201,
-    longitude: 106.818,
-    radiation: 320,
-  },
-];
